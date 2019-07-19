@@ -11,16 +11,16 @@ function validateObjectKeys(input) {
                 "PremiumOnly": true
             }
         }
-    }
+    };
 
     function compareObjects(template, data) {
         function getAllKeyNames(o, arr, str) {
-            Object.keys(o).forEach(function (k) {
+            Object.keys(o).forEach(k => {
                 if (Object.prototype.toString.call(o[k]) === "[object Object]") {
                     getAllKeyNames(o[k], arr, (str + '.' + k));
                 }
                 else if (Array.isArray(o[k])) {
-                    o[k].forEach(function (v) {
+                    o[k].forEach(v => {
                         getAllKeyNames(v, arr, (str + '.' + k));
                     });
                 }
